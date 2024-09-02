@@ -1,14 +1,14 @@
 #!/bin/sh
 
-CONFDIR=/opt/etc/nfqws
+CONFDIR=/etc/nfqws
 CONFFILE=$CONFDIR/nfqws.conf
 LISTFILE=$CONFDIR/user.list
 LISTAUTOFILE=$CONFDIR/auto.list
 LISTEXCLUDEFILE=$CONFDIR/exclude.list
-LISTLOG=/opt/var/log/nfqws.log
-NFQWS_BIN=/opt/usr/bin/nfqws
-INIT_SCRIPT=/opt/etc/init.d/S51nfqws
-NETFILTER_SCRIPT=/opt/etc/ndm/netfilter.d/100-nfqws.sh
+LISTLOG=/var/log/nfqws.log
+NFQWS_BIN=/usr/bin/nfqws
+INIT_SCRIPT=/etc/init.d/S51nfqws
+#NETFILTER_SCRIPT=/etc/ndm/netfilter.d/100-nfqws.sh
 
 stop_func() {
   if [ -f "$INIT_SCRIPT" ]; then
@@ -86,7 +86,7 @@ config_copy_files_func() {
   cp -f $HOME_FOLDER/etc/init.d/S51nfqws $INIT_SCRIPT
   chmod +x $INIT_SCRIPT
 
-  if [ -d "/opt/etc/ndm/netfilter.d" ]; then
+  if [ -d "/etc/ndm/netfilter.d" ]; then
     cp -f $HOME_FOLDER/etc/ndm/netfilter.d/100-nfqws.sh $NETFILTER_SCRIPT
     chmod +x $NETFILTER_SCRIPT
   fi
@@ -116,10 +116,10 @@ config_copy_list_func() {
 config_select_arch_func() {
   if [ -z "$ARCH" ]; then
     echo -e "\nSelect the router architecture: mipsel (default), mips, aarch64, arm"
-    echo "  mipsel  - KN-1010/1011, KN-1810, KN-1910/1912, KN-2310, KN-2311, KN-2610, KN-2910, KN-3810"
-    echo "  mips    - KN-2410, KN-2510, KN-2010, KN-2012, KN-2110, KN-2112, KN-3610"
-    echo "  aarch64 - KN-2710, KN-1811"
-    echo "  arm     - Other arm-based devices"
+    echo "  mipsel" 
+    echo "  mips"    
+    echo "  aarch64"
+    echo "  arm  - Other arm-based devices"
     read ARCH
   fi
 
