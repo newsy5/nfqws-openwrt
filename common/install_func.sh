@@ -86,10 +86,10 @@ config_copy_files_func() {
   cp -f $HOME_FOLDER/etc/init.d/S51nfqws $INIT_SCRIPT
   chmod +x $INIT_SCRIPT
 
-  if [ -d "/etc/ndm/netfilter.d" ]; then
-    cp -f $HOME_FOLDER/etc/ndm/netfilter.d/100-nfqws.sh $NETFILTER_SCRIPT
-    chmod +x $NETFILTER_SCRIPT
-  fi
+#  if [ -d "/etc/ndm/netfilter.d" ]; then
+#    cp -f $HOME_FOLDER/etc/ndm/netfilter.d/100-nfqws.sh $NETFILTER_SCRIPT
+#    chmod +x $NETFILTER_SCRIPT
+#  fi
 
   mkdir -p $CONFDIR
   cp -f $HOME_FOLDER/etc/nfqws/nfqws.conf $CONFFILE
