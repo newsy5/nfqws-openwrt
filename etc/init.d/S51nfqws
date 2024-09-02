@@ -2,9 +2,9 @@
 
 VERSION="1.2.1"
 
-. /opt/etc/nfqws/nfqws.conf
+. /etc/nfqws/nfqws.conf
 
-NFQWS_BIN=/opt/usr/bin/nfqws
+NFQWS_BIN=/usr/bin/nfqws
 
 is_running() {
   PID_RUNNING=$(pgrep -nx "$NFQWS_BIN" 2>/dev/null)
