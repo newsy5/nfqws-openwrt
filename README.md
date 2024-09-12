@@ -66,7 +66,7 @@ opkg install curl
 ### Ручная установка (не рекомендуется, если entware установлен во внутреннюю память)
 
 ```
-opkg install git git-http curl kmod-ipt-conntrack-extra iptables-mod-conntrack-extra
+opkg install git git-http curl kmod-ipt-conntrack-extra iptables-mod-conntrack-extra iptables-mod-nfqueue
 git clone https://github.com/newsy/nfqws-openwrt.git --depth 1
 chmod +x ./nfqws-openwrt/*.sh
 ./nfqws-openwrt/install.sh
